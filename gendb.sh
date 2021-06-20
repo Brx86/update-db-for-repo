@@ -3,8 +3,8 @@
 mkdir aya
 ls -la
 pwd
-urls=`curl https://github.com/Brx86/repo/releases/tag/$1 -s|grep "/Brx86/repo/releases/download/$1/"|awk -F '"|"' '{print$2}'`
-
+urls=$(curl https://github.com/Brx86/repo/releases/tag/$1 -s|grep "/Brx86/repo/releases/download/$1/"|awk -F '"|"' '{print$2}')
+echo $urls
 for i in ${urls[*]}; do 
 wget https://github.com/$i -P aya/
 done
