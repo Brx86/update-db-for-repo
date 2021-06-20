@@ -1,12 +1,11 @@
 #!/bin/bash
 
-mkdir aya
-ls -la
-pwd
-urls=$(curl https://github.com/Brx86/repo/releases/tag/$1 -s|grep "/Brx86/repo/releases/download/$1/"|awk -F '"|"' '{print$2}')
-echo $urls
+mkdir aya -p
+
+urls=$(curl https://github.com/Brx86/repo/releases/tag/x86_64 -s|grep "/Brx86/repo/releases/download/x86_64/"|awk -F '"|"' '{print$2}')
 for i in ${urls[*]}; do 
-wget https://github.com/$i -P aya/
+#echo Downloading $i
+wget -q --show-progress https://github.com/$i -P aya/
 done
 
-repo-add aya.db.tar.gz aya/*
+repo-add aya.db.tar.gz ./aya/*
