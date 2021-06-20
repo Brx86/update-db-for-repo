@@ -1,0 +1,15 @@
+name: 'Update DB for Repo'
+description: 'Update DB for Repo in Releases'
+branding:
+  icon: user-check
+  color: gray-dark
+inputs:
+  tag:
+    description: 'Update DB for Repo in Releases'
+    required: true
+    default: 'x86_64'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo-name }}
