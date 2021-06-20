@@ -9,5 +9,4 @@ for i in ${urls[*]}; do
 wget https://github.com/$i -P aya/
 done
 
-cd aya
-repo-add aya.db.tar.gz *
+repo-add aya.db.tar.gz aya/*
