@@ -8,6 +8,6 @@ for i in ${urls[*]}; do
 pkg=$(echo $i|awk -F '/' '{print$7}')
 echo Downloading $pkg
 wget -q https://github.com/$i -P aya/
-repo-add aya.db.tar.gz ./aya/$pkg
+repo-add -p aya.db.tar.gz ./aya/$pkg
 done
 
