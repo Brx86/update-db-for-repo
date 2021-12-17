@@ -15,4 +15,4 @@ echo "refresh_token: 'cc6fa2baa3a3428c81a0fbc0aa77af73'" > /home/builder/.config
 useradd builder -m
 echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 sudo -u builder pip install aliyunpan
-sudo -u builder aliyunpan sync aya
+sudo -u builder /home/builder/.local/bin/aliyunpan sync aya
