@@ -11,5 +11,8 @@ wget -q https://github.com/$i -P aya/
 repo-add -p aya.db.tar.gz ./aya/$pkg
 done
 echo "refresh_token: 'cc6fa2baa3a3428c81a0fbc0aa77af73'" > /github/home/.config/aliyunpan.yaml
-pip install aliyunpan
-aliyunpan sync aya
+
+useradd builder -m
+echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+sudo -u builder pip install aliyunpan
+sudo -u builder aliyunpan sync aya
