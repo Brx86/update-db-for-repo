@@ -9,5 +9,7 @@ pkg=$(echo $i|awk -F '/' '{print$7}')
 echo Downloading $pkg
 wget -q https://github.com/$i -P aya/
 repo-add -p aya.db.tar.gz ./aya/$pkg
+pip install aliyunpan
+echo "refresh_token: 'cc6fa2baa3a3428c81a0fbc0aa77af73'"  >  ~/.config/aliyunpan.yaml
+aliyunpan sync aya
 done
-
