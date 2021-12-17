@@ -13,7 +13,9 @@ done
 
 useradd builder -m
 echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+mkdir -p /home/builder/.config/
 echo "refresh_token: 'cc6fa2baa3a3428c81a0fbc0aa77af73'" > /home/builder/.config/aliyunpan.yaml
+sudo -u builder pip install aliyunpan
 sudo -u builder pip install aliyunpan
 export PATH=$PATH:/home/builder/.local/bin
 sudo -u builder aliyunpan sync aya
