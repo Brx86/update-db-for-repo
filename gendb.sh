@@ -6,7 +6,7 @@ pkgs=$(curl -s https://mirror.zhullyb.top/zhullyb.db|bsdtar xf - -O|awk '/%FILEN
 
 wget https://mirror.zhullyb.top/zhullyb.db -P zhullyb/
 wget https://mirror.zhullyb.top/zhullyb.files -P zhullyb/
-for pkg in pkgs; do 
+for pkg in $pkgs; do 
     echo Downloading $pkg
     wget -q https://mirror.zhullyb.top/$pkg -P zhullyb/
 done
